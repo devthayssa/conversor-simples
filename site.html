@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define que o documento é HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a visualização para garantir que o site seja responsivo -->
+    <title>Conversor de Moedas</title>
+    <!-- Define o título da página -->
+</head>
+<body>
+    <!-- Início do corpo do documento HTML -->
+    <div style="text-align: center;">
+        <!-- Div que centraliza o conteúdo -->
+        <h1 style="color: red;">Conversor de Moedas</h1>
+        <!-- Cabeçalho com o título e cor vermelha -->
+        <input id="valorReal" placeholder="Valor em R$" type="number" style="margin-bottom: 10px;">
+        <!-- Campo de entrada para o valor em reais, com placeholder e estilo inline -->
+        <br>
+        <button onclick="converter()">Converter</button>
+        <!-- Botão que chama a função 'converter' ao ser clicado -->
+        <div id="resultado" style="margin-top: 20px;"></div>
+        <!-- Div onde os resultados serão exibidos, com margem superior para separação -->
+    </div>
+
+    <script>
+        // Início do bloco de script JavaScript
+        const valorReal = document.querySelector("#valorReal");
+        // Seleciona o campo de entrada de valor real
+        const resultado = document.querySelector("#resultado");
+        // Seleciona a div onde os resultados serão exibidos
+        document.querySelector("h1").style.color = "red";
+        // Define a cor do texto do título como vermelho
+
+        function converter() {
+            // Função chamada ao clicar no botão "Converter"
+            document.querySelector("h1").style.color = "green";
+            // Muda a cor do título para verde ao executar a função
+            const valorDolar = valorReal.value / 5.77;
+            // Converte o valor em reais para dólares, utilizando a taxa de conversão de 5.77
+            const valorEuro = valorReal.value / 6.50;
+            // Converte o valor em reais para euros, utilizando a taxa de conversão de 6.50
+            resultado.innerHTML = `O valor em Dólar é $${valorDolar.toFixed(2)}<br>O valor em Euro é €${valorEuro.toFixed(2)}`;
+            // Exibe os resultados convertidos na div 'resultado' com duas casas decimais
+        }
+    </script>
+    <!-- Fim do bloco de script JavaScript -->
+</body>
+</html>
+<!-- Fim do documento HTML -->
